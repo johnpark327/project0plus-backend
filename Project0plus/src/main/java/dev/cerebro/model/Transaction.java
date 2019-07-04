@@ -1,16 +1,19 @@
 package dev.cerebro.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Transaction {
 
+    @Id
+    @GeneratedValue
     private int tid;
     private int aid;
     private String type;
     private double amount;
     private String transaction_date;
 
-    public Transaction() {
-        super();
-    }
+    public Transaction() { super(); }
 
     public Transaction(int tid, int aid, String type, double amount, String transaction_date) {
         this.tid = tid;

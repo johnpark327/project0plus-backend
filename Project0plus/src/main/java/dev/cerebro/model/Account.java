@@ -1,11 +1,20 @@
 package dev.cerebro.model;
 
+import javax.persistence.*;
+import java.util.Set;
+
+@Entity
 public class Account {
 
+    @Id
+    @GeneratedValue
     private int aid;
     private int cid;
     private double amount;
     private String created;
+
+    @OneToMany(mappedBy = "aid", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Transaction> transactions;
 
     public Account() {
         super();

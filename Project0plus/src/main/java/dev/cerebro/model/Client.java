@@ -1,6 +1,13 @@
 package dev.cerebro.model;
 
+import javax.persistence.*;
+import java.util.Set;
+
+@Entity
 public class Client {
+
+    @Id
+    @GeneratedValue
     private int cid;
     private String fname;
     private String lname;
@@ -9,9 +16,10 @@ public class Client {
     private String email;
     private String role;
 
-    public Client() {
-        super();
-    }
+    @OneToMany(mappedBy = "cid", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Account> accounts;
+
+    public Client() { super(); }
 
     public Client(int cid, String fname, String lname, String username, String password, String email, String role) {
         this.cid = cid;

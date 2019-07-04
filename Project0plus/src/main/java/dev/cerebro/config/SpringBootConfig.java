@@ -1,4 +1,4 @@
-package dev.cerebro.app;
+package dev.cerebro.config;
 
 
 import org.springframework.boot.SpringApplication;

@@ -3,11 +3,11 @@ package dev.cerebro.model;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
+@Entity // This annotation tells Spring that this is an Entity linked to a table in a database
 public class Client {
 
-    @Id
-    @GeneratedValue
+    @Id // This annotation maps the ID in the table
+    @GeneratedValue // This annotation enables Hibernate to auto generate an id that is specific to Hibernate
     private int cid;
     private String fname;
     private String lname;
@@ -16,7 +16,7 @@ public class Client {
     private String email;
     private String role;
 
-    @OneToMany(mappedBy = "cid", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "cid", cascade = CascadeType.ALL, orphanRemoval = true) // This annotation lets the application know that one Account can have many Transactions.
     private Set<Account> accounts;
 
     public Client() { super(); }

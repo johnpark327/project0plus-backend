@@ -2,11 +2,11 @@ package dev.cerebro.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity // This annotation tells Spring that this is an Entity linked to a table in a database
 public class Transaction {
 
-    @Id
-    @GeneratedValue
+    @Id // This annotation maps the ID in the table
+    @GeneratedValue // This annotation enables Hibernate to auto generate an id that is specific to Hibernate
     private int tid;
     private int aid;
     private String type;

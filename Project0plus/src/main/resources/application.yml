@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: Project0Plus
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@project0plus.clqocmytnb4q.us-east-1.rds.amazonaws.com:1521:ORCL
+    username: admin
+    password: password
+  jpa:
+    hibernate:
+      show-sql: true
